@@ -10,7 +10,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 /**
  *
@@ -20,6 +26,26 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Label label;
+    @FXML
+    private AnchorPane AnchorPane;
+    @FXML
+    private Button drawButton;
+    @FXML
+    private TextArea canvas;
+    @FXML
+    private ListView<?> shapeList;
+    @FXML
+    private ChoiceBox<?> shape;
+    @FXML
+    private ChoiceBox<?> patternList;
+    @FXML
+    private Button addButton;
+    @FXML
+    private TextField sizeField;
+    @FXML
+    private Button clearButtonShape;
+    @FXML
+    private Button clearButtonCanvas;
     
     
     @FXML
@@ -28,11 +54,26 @@ public class FXMLDocumentController implements Initializable {
         label.setText("Hello World!");
     }
     
-   
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
+    
+    /**
+     * draws shapes, hopefully.. in the future
+     */
+//     public void draw(int x, int y, GraphicsContext context) {
+//      context.setFill(Color.BLACK);
+//      context.setStroke(Color.BLACK);
+//      context.setLineWidth(1);
+//
+//      double[] xPoints = {x,x+50,x-50};
+//      double[] yPoints = {y,y+50,y+50};
+//
+//      context.beginPath();
+//      context.strokePolygon(xPoints, yPoints, 3);
+// }
 }
