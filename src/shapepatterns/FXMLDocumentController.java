@@ -10,11 +10,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -27,25 +27,13 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label label;
     @FXML
-    private AnchorPane AnchorPane;
-    @FXML
-    private Button drawButton;
-    @FXML
-    private TextArea canvas;
-    @FXML
-    private ListView<?> shapeList;
-    @FXML
     private ChoiceBox<?> shape;
-    @FXML
-    private ChoiceBox<?> patternList;
     @FXML
     private Button addButton;
     @FXML
-    private TextField sizeField;
+    private Button button;
     @FXML
-    private Button clearButtonShape;
-    @FXML
-    private Button clearButtonCanvas;
+    private Canvas canvas;
     
     
     @FXML
@@ -53,6 +41,8 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
+    
+    
     
 
     
