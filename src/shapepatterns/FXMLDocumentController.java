@@ -7,6 +7,8 @@ package shapepatterns;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,7 +37,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ListView<?> shapeList;
     @FXML
-    private ChoiceBox<?> shape;
+    private ChoiceBox shapeChoice;
     @FXML
     private ChoiceBox<?> patternList;
     @FXML
@@ -48,6 +50,14 @@ public class FXMLDocumentController implements Initializable {
     private Button clearButtonCanvas;
     
     
+    ObservableList<String> shapes = FXCollections.observableArrayList("Triangle","Circle");
+   
+    private void choiceBoxMenu(){
+    shapeChoice.setValue("Triangle");
+    shapeChoice.setItems(shapes);
+    }
+    
+    
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
@@ -58,7 +68,7 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        choiceBoxMenu();
     }    
     
     
