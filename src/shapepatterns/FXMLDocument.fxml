@@ -8,7 +8,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="659.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="shapepatterns.FXMLDocumentController">
 <AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shapepatterns.FXMLDocumentController">
     <children>
         <Button fx:id="button" layoutX="531.0" layoutY="399.0" onAction="#handleButtonAction" text="Draw Shapes" />
