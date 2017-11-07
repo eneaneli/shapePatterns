@@ -13,8 +13,13 @@
         <Button fx:id="drawButton" layoutX="531.0" layoutY="399.0" onAction="#handleButtonAction" text="Draw Shapes" />
         <Label fx:id="label" layoutX="37.0" layoutY="432.0" minHeight="16" minWidth="69" />
       <ListView layoutX="184.0" layoutY="43.0" prefHeight="336.0" prefWidth="128.0" />
+<<<<<<< HEAD
       <ChoiceBox fx:id="shape" layoutX="14.0" layoutY="43.0" prefWidth="150.0" />
       <ChoiceBox layoutX="330.0" layoutY="399.0" prefHeight="25.0" prefWidth="110.0" />
+=======
+      <ChoiceBox fx:id="shapeChoice" layoutX="14.0" layoutY="43.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="330.0" layoutY="399.0" prefWidth="150.0" />
+>>>>>>> 3f9c78a1676bd33d8138aa819318a5e31f36a257
       <Button fx:id="addButton" layoutX="37.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Add -&gt;" />
       <Label layoutX="23.0" layoutY="351.0" text="Size:" />
       <TextField layoutX="65.0" layoutY="347.0" prefHeight="25.0" prefWidth="103.0" />

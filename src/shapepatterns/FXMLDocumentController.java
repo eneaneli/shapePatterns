@@ -7,6 +7,8 @@ package shapepatterns;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,13 +29,33 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label label;
     @FXML
+<<<<<<< HEAD
     private ChoiceBox<?> shape;
+=======
+    private AnchorPane AnchorPane;
+    @FXML
+    private Button drawButton;
+    @FXML
+    private TextArea canvas;
+    @FXML
+    private ListView<?> shapeList;
+    @FXML
+    private ChoiceBox shapeChoice;
+>>>>>>> 3f9c78a1676bd33d8138aa819318a5e31f36a257
     @FXML
     private Button addButton;
     @FXML
     private Button button;
     @FXML
     private Canvas canvas;
+    
+    
+    ObservableList<String> shapes = FXCollections.observableArrayList("Triangle","Circle");
+   
+    private void choiceBoxMenu(){
+    shapeChoice.setValue("Triangle");
+    shapeChoice.setItems(shapes);
+    }
     
     
     @FXML
@@ -48,7 +70,7 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        choiceBoxMenu();
     }    
     
     
