@@ -39,7 +39,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ChoiceBox shapeChoice;
     @FXML
-    private ChoiceBox<?> patternList;
+    private ChoiceBox canvasList;
     @FXML
     private Button addButton;
     @FXML
@@ -51,10 +51,14 @@ public class FXMLDocumentController implements Initializable {
     
     
     ObservableList<String> shapes = FXCollections.observableArrayList("Triangle","Circle");
+    ObservableList<String> canvaslist = FXCollections.observableArrayList("Grid","Cross","Random");
    
     private void choiceBoxMenu(){
     shapeChoice.setValue("Triangle");
     shapeChoice.setItems(shapes);
+    
+    canvasList.setValue("Grid");
+    canvasList.setItems(canvaslist);
     }
     
     
