@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shapepatterns;
+package shapepatterns.BE;
 
 import javafx.scene.canvas.GraphicsContext;
 
 /**
  *
- * @author Michael
+ * @author Anni
  */
 public class Shape {
     
@@ -17,9 +17,7 @@ public class Shape {
     private String Name;
 
     /**
-     * 1706 whatt
-     * @param Name
-     * @param Size 
+     * Shape with parameters String Name and int Size
      */
     public Shape(String Name, int Size){
         this.Name = Name;
@@ -27,7 +25,7 @@ public class Shape {
     }
 
     /**
-     * 1706
+     * getter
      * @return 
      */
     public int getSize() {
@@ -35,7 +33,7 @@ public class Shape {
     }
 
     /**
-     * 1706
+     * getter
      * @return 
      */
     public String getName() {

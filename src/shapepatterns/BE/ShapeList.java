@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shapepatterns;
+package shapepatterns.BE;
 
 
+import shapepatterns.BE.RandomPattern;
+import shapepatterns.BE.Shape;
+import shapepatterns.bll.DrawShape;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -74,7 +77,7 @@ public class ShapeList {
     }
 
     /**
-     * comment what it does 1706
+     * 
      * @param shape
      * @param size 
      */
@@ -101,7 +104,7 @@ public class ShapeList {
     }
 
     /**
-     * 1706 explain
+     * 1706 a getter for the canvaslist
      * @return 
      */
     public ArrayList<String> getCanvaslist() {
@@ -110,29 +113,34 @@ public class ShapeList {
 
     /**
      * This is linked to the clear button beneath the canvas, and it clears the canvas.
+     * is also in the controller
      */
     public void clearCanvas()
     {
         drawShape.clearCanvas();
     }
     
-    
+    /**
+     * here's a setter
+     * @param pattern 
+     */
     public void setPattern(String pattern)
     {
         if (pattern == "Random")
         {
             this.pattern = new RandomPattern();
         }
-        /**
+      
         if (pattern == "Grid")
         {
             this.pattern = new GridPattern();
         }
+        
         if (pattern == "Cross")
         {
             this.pattern = new CrossPattern();
         }
-        */
+        
     }
 
      

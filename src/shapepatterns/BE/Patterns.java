@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shapepatterns;
+package shapepatterns.BE;
 
 /**
  *
- * @author Michael
+ * @author Anni
  */
 public interface Patterns {
     

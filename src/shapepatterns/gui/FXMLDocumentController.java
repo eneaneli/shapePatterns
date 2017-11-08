@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shapepatterns;
+package shapepatterns.gui;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -13,19 +13,21 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-
+import shapepatterns.bll.DrawShape;
+import shapepatterns.BE.ShapeList;
+import javafx.scene.canvas.GraphicsContext;
 
 /**
  *
- * @author Michael
+ * @author Anni
  */
 public class FXMLDocumentController implements Initializable {
+    GraphicsContext gc;
     
      @FXML
     private Label label;
@@ -68,7 +70,7 @@ public class FXMLDocumentController implements Initializable {
 }
     
     /**
-     * 1706 why fxml here?
+     * 1706 ellie
      * @param event 
      */
     @FXML
@@ -92,16 +94,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     /**
-     * 1706 fxml?
-     * @param event 
-     */
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
-    
-    /**
-     * override? 1706
+     * 
      * @param url
      * @param rb 
      */
@@ -114,11 +107,12 @@ public class FXMLDocumentController implements Initializable {
         
         selectChoice();
     
-        
     }    
+    
       /**
    * This is linked to the clear button right beneath the ListView, and it will clear
-   * the ListView so we can add new shapes. 1706 1706, how does it work
+   * the ListView so we can add new shapes. 
+   * not good enough yet, need to find a way to actually delete items from list 1706
    * @param event 
    */
    private void clearTheList ()
@@ -137,17 +131,18 @@ public class FXMLDocumentController implements Initializable {
     }
 
     /**
-     * 1706 again why fxml, not sure we need this, not implemented yet
+     * 1706
      * @param event 
      */
      @FXML
     private void clearCanvas()
     {
         shape.clearCanvas();
+       // gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
     }
    
      /**
-    * comment 1706, not sure we need this, not implemented yet
+    * cant make work yet 1706
     * @param event 
     */
     @FXML

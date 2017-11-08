@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shapepatterns;
+package shapepatterns.BE;
 
 import java.util.Random;
 
 /**
  *
- * @author Michael
+ * @author Anni
  */
-public class RandomPattern implements Patterns {
+public class CrossPattern implements Patterns{
+
     
     Random rand = new Random();
 
@@ -20,13 +21,15 @@ public class RandomPattern implements Patterns {
     @Override
     public double getNextX()
     {
-        return rand.nextDouble() * 321;
+       return rand.nextDouble() * 321;//321
+       // return 100;
     }
 
     @Override
     public double getNextY()
     {
-        return rand.nextDouble() * 385;
-    }
-    
+        //return 192; 
+        return rand.nextDouble() * 385; 
+    }  
+  
 }

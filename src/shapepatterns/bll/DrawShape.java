@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shapepatterns;
+package shapepatterns.bll;
 
 import javafx.scene.canvas.GraphicsContext;
 
 /**
- *
+ *In this method the ways to draw Circle, Rectangle and Triangle are defined.
  * @author Michael
  */
 public class DrawShape {
@@ -36,7 +36,12 @@ public class DrawShape {
     {
         this.gc = gc;
     }
-
+    
+    /**
+     * this method is also in the document controller, but if I 
+     * remove it/make it private here I can't use clearCanvas
+     * -AEE, edit this 1706
+     */
     public void clearCanvas()
     {
         gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
