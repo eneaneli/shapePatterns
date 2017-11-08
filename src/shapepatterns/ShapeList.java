@@ -8,7 +8,10 @@ package shapepatterns;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
 import javafx.event.ActionEvent;
+
+import javafx.scene.canvas.GraphicsContext;
 
 
 
@@ -18,19 +21,24 @@ import javafx.event.ActionEvent;
  */
 public class ShapeList {
     
-    private DrawShape shape = new DrawShape();
+    private DrawShape drawShape = new DrawShape();
     private ArrayList<String> shapes = new ArrayList();
     private ArrayList<String> canvaslist = new ArrayList();
     private ArrayList<Shape> shapesInLine = new ArrayList();
     
-    
+    /**
+     * Write stuff 1706
+     */
     public ShapeList()
     {
         shapes.addAll(Arrays.asList("Triangle", "Circle", "Rectangle"));
         canvaslist.addAll(Arrays.asList("Grid", "Cross", "Random"));
     }
     
-    
+    /**
+     * Write stuff 1706
+     * @return 
+     */
     public ArrayList<String> getShapesInLine()
     {
         ArrayList<String> shapesAsString = new ArrayList();
@@ -41,47 +49,71 @@ public class ShapeList {
             return shapesAsString;
             }
     
-    
+    /**
+     * write stuff 1706
+     */
     public void drawShape()
     {
+        for (Shape shape: shapesInLine)
+        {
         
+            if(shape.getName() == "Traingle"){
+                drawShape.drawTriangle(50, 50, shape.getSize());
+            }
+            if(shape.getName() == "Rectangle"){
+                drawShape.drawRectangle(50, 50, shape.getSize());
+            }
+            if(shape.getName() == "Circle"){
+                drawShape.drawCircle(50, 50, shape.getSize());
+            }
+            
+        }
     }
 
-    
-   public void addShapesInLine(String shape, int size)
+    /**
+     * comment what it does 1706
+     * @param shape
+     * @param size 
+     */
+    public void addShapesInLine(String shape, int size)
     {
         this.shapesInLine.add(new Shape(shape, size));
     }
+   
+    /**
+     * what does it do 1706
+     * @param context 
+     */
+    public void setContext(GraphicsContext context)
+    {
+        drawShape.setContext(context);
+    }
 
+    /**
+     * what goin on hier 1706
+     * @return 
+     */
     public ArrayList<String> getShapes() {
         return shapes;
     }
 
-
+    /**
+     * 1706 explain
+     * @return 
+     */
     public ArrayList<String> getCanvaslist() {
         return canvaslist;
     }
 
     /**
-     * This is linked to the clear button beneath the canvas, and it clears the canvas
+     * This is linked to the clear button beneath the canvas, and it clears the canvas.
      */
     public void clearCanvas()
     {
-      shape.clearCanvas();
+        drawShape.clearCanvas();
     }
 
 
-  /**
-   * This is linked to the clear button right beneath the ListView, and it will clear
-   * the ListView so we can add new shapes. 1706
-   * @param event 
-   */
-//       private void clearTheList (ActionEvent event)
-//    {
-//        asiLogsListView.getItems().clear();
-//    }     
-
-    
-        
+     
     }
 

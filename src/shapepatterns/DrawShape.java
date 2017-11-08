@@ -19,24 +19,42 @@ public class DrawShape {
         gc.strokeOval(x, y, Size, Size);
     }
     
+    /**
+     * Explain 1706
+     * @param x
+     * @param y
+     * @param Size 
     public void drawRectangle(double x, double y, int Size)
     {
         gc.strokeRect(x, y, Size, Size);
     }
     
-    public void drawTriangle(double x, double y, int Size)
+    /**
+     * explain dis shiet 1706
+     * @param x
+     * @param y
+     * @param size 
+     */
+    public void drawTriangle(double x, double y, int size)
     {
-        double[] xPoints = {x, x + Size, x + Size/2};
-        double[] yPoints = {y, y, y  + Size};
+        double[] xPoints = {x, x + size, x + size / 2};
+        double[] yPoints = {y, y, y + size};
         gc.beginPath();
-        gc.strokePolygon(xPoints, yPoints, 3);
+        gc.fillPolygon(xPoints, yPoints, 3);
     }
     
+    /**
+     * explain 1706
+     * @param gc 
+     */
     public void setContext(GraphicsContext gc)
     {
         this.gc = gc;
     }
     
+    /**
+     * clearCanvas is also in ShapeList, delete one, also comment here 1706
+     */
     public void clearCanvas()
     {
         gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());

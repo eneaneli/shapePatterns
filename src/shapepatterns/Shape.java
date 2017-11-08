@@ -16,6 +16,11 @@ public class Shape {
     private int Size;
     private String Name;
 
+    /**
+     * 1706 whatt
+     * @param Name
+     * @param Size 
+     */
     public Shape(String Name, int Size){
         this.Name = Name;
         this.Size = Size;
@@ -24,11 +29,18 @@ public class Shape {
 
   
 
-
+    /**
+     * 1706
+     * @return 
+     */
     public int getSize() {
         return Size;
     }
 
+    /**
+     * 1706
+     * @return 
+     */
     public String getName() {
         return Name;
     }

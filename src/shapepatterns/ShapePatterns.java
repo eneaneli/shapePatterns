@@ -28,6 +28,7 @@ public class ShapePatterns extends Application {
     }
 
     /**
+     * 1706
      * @param args the command line arguments
      */
     public static void main(String[] args) {
