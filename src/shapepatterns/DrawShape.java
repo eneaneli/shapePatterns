@@ -24,6 +24,7 @@ public class DrawShape {
      * @param x
      * @param y
      * @param Size 
+     */
     public void drawRectangle(double x, double y, int Size)
     {
         gc.strokeRect(x, y, Size, Size);

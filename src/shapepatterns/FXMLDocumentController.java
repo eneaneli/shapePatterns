@@ -45,8 +45,7 @@ public class FXMLDocumentController implements Initializable {
     private Canvas drawShapes;
     @FXML
     private Button drawButton;
-    @FXML
-    private Canvas canvas;
+ 
     @FXML
     private Button clearList;
     @FXML
@@ -94,6 +93,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void drawShape()
     {
+        shapeStore.setPattern(canvasList.getValue());
         shapeStore.drawShape();
     }
     
@@ -116,7 +116,7 @@ public class FXMLDocumentController implements Initializable {
         shapeStore = new ShapeList();;
         shape = new DrawShape(); 
         
-        shapeStore.setContext(canvas.getGraphicsContext2D());
+        shapeStore.setContext(drawShapes.getGraphicsContext2D());
         
         selectChoice();
     

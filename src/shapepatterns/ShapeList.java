@@ -22,6 +22,7 @@ import javafx.scene.canvas.GraphicsContext;
 public class ShapeList {
     
     private DrawShape drawShape = new DrawShape();
+    private Patterns pattern;
     private ArrayList<String> shapes = new ArrayList();
     private ArrayList<String> canvaslist = new ArrayList();
     private ArrayList<Shape> shapesInLine = new ArrayList();
@@ -56,15 +57,17 @@ public class ShapeList {
     {
         for (Shape shape: shapesInLine)
         {
-        
+            double x = pattern.getNextX();
+            double y = pattern.getNextX();
+            
             if(shape.getName() == "Traingle"){
-                drawShape.drawTriangle(50, 50, shape.getSize());
+                drawShape.drawTriangle(x, y, shape.getSize());
             }
             if(shape.getName() == "Rectangle"){
-                drawShape.drawRectangle(50, 50, shape.getSize());
+                drawShape.drawRectangle(x, y, shape.getSize());
             }
             if(shape.getName() == "Circle"){
-                drawShape.drawCircle(50, 50, shape.getSize());
+                drawShape.drawCircle(x, y, shape.getSize());
             }
             
         }
@@ -112,7 +115,25 @@ public class ShapeList {
     {
         drawShape.clearCanvas();
     }
-
+    
+    
+    public void setPattern(String pattern)
+    {
+        if (pattern == "Random")
+        {
+            this.pattern = new RandomPattern();
+        }
+        /**
+        if (pattern == "Grid")
+        {
+            this.pattern = new GridPattern();
+        }
+        if (pattern == "Cross")
+        {
+            this.pattern = new CrossPattern();
+        }
+        */
+    }
 
      
     }
