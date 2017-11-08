@@ -24,12 +24,12 @@ public class DrawShape {
         gc.strokeRect(x, y, Size, Size);
     }
     
-    public void drawTriangle(double x, double y, int Size)
+    public void drawTriangle(double x, double y, int size)
     {
-        double[] xPoints = {x, x + Size, x + Size/2};
-        double[] yPoints = {y, y, y  + Size};
+        double[] xPoints = {x, x + size, x + size / 2};
+        double[] yPoints = {y, y, y + size};
         gc.beginPath();
-        gc.strokePolygon(xPoints, yPoints, 3);
+        gc.fillPolygon(xPoints, yPoints, 3);
     }
     
     public void setContext(GraphicsContext gc)
