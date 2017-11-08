@@ -49,7 +49,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button clearList;
     @FXML
-    private Button clearCanvas;
+    private Button clearCanvasButton;
   
     
     /**
@@ -78,15 +78,7 @@ public class FXMLDocumentController implements Initializable {
         
     }
 
-    /**
-     * 1706 again why fxml
-     * @param event 
-     */
-    private void clearCanvas(ActionEvent event)
-    {
-        shape.clearCanvas();
-    }
-    
+
     /**
      * fxml? 1706
      */
@@ -130,13 +122,34 @@ public class FXMLDocumentController implements Initializable {
    private void clearTheList ()
   {
        shapeList.getItems().clear();
+
   }     
 
+   /**
+    * comment 1706
+    * @param event 
+    */
     @FXML
     private void clearListButton(ActionEvent event) {
         clearTheList();
     }
 
-
+    /**
+     * 1706 again why fxml, not sure we need this, not implemented yet
+     * @param event 
+     */
+     @FXML
+    private void clearCanvas()
+    {
+        shape.clearCanvas();
+    }
    
+     /**
+    * comment 1706, not sure we need this, not implemented yet
+    * @param event 
+    */
+    @FXML
+    private void clearCanvasButton(ActionEvent event) {
+        clearCanvas();
+    }  
 }

@@ -22,7 +22,7 @@
 
         <Button fx:id="drawButton" layoutX="518.0" layoutY="412.0" onAction="#drawShape" text="Draw Shapes" />
       <Button fx:id="clearList" layoutX="207.0" layoutY="412.0" mnemonicParsing="false" onAction="#clearListButton" text="Clear" />
-      <Button fx:id="clearCanvas" layoutX="444.0" layoutY="412.0" mnemonicParsing="false" text="Clear" />
+      <Button fx:id="clearCanvasButton" layoutX="444.0" layoutY="412.0" mnemonicParsing="false" onAction="#clearCanvas" text="Clear" />
 
     </children>
 </AnchorPane>
