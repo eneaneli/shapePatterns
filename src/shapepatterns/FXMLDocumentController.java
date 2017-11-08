@@ -39,8 +39,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField shapeSize;
     
-    
     private ShapeList shapeStore = new ShapeList();
+    
     private DrawShape shape = new DrawShape();
     @FXML
     private Canvas drawShapes;
@@ -48,7 +48,13 @@ public class FXMLDocumentController implements Initializable {
     private Button drawButton;
     @FXML
     private Canvas canvas;
+    @FXML
+    private Button clearList;
+    @FXML
+    private Button clearCanvas;
   
+    
+    
     private void selectChoice(){
     shapeChoice.getItems().addAll(shapeStore.getShapes());
         shapeChoice.getSelectionModel().selectFirst();
@@ -68,10 +74,15 @@ public class FXMLDocumentController implements Initializable {
         shapeList.getItems().addAll(shapeStore.getShapesInLine());
         
     }
-    private void clearCanvas(ActionEvent event)
+    
+    
+    
+    private void clearTheCanvas(ActionEvent event)
     {
         shape.clearCanvas();
     }
+   
+
     
     @FXML
     private void handleButtonAction(ActionEvent event) {

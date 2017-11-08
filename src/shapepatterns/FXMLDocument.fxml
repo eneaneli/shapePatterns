@@ -16,13 +16,14 @@
       <Label layoutX="62.0" layoutY="287.0" text="Size" />
       <ListView fx:id="shapeList" layoutX="173.0" layoutY="14.0" prefHeight="385.0" prefWidth="143.0" />
       <Button fx:id="addButton" layoutX="39.0" layoutY="359.0" mnemonicParsing="false" onAction="#addShapeButton" prefHeight="31.0" prefWidth="69.0" text="Add" />
-      <ComboBox fx:id="canvasList" layoutX="330.0" layoutY="412.0" prefWidth="150.0" />
+      <ComboBox fx:id="canvasList" layoutX="330.0" layoutY="412.0" prefHeight="25.0" prefWidth="92.0" />
       <TextField fx:id="shapeSize" layoutX="16.0" layoutY="321.0" prefHeight="31.0" prefWidth="118.0" />
       <Canvas fx:id="drawShapes" height="385.0" layoutX="323.0" layoutY="14.0" width="321.0" />
 
         <Button fx:id="drawButton" layoutX="518.0" layoutY="412.0" onAction="#handleButtonAction" text="Draw Shapes" />
       <Canvas fx:id="canvas" height="385.0" layoutX="323.0" layoutY="14.0" width="321.0" />
-      <Button layoutX="207.0" layoutY="412.0" mnemonicParsing="false" text="Clear" />
+      <Button fx:id="clearList" layoutX="207.0" layoutY="412.0" mnemonicParsing="false" text="Clear" />
+      <Button fx:id="clearCanvas" layoutX="444.0" layoutY="412.0" mnemonicParsing="false" text="Clear" />
 
     </children>
 </AnchorPane>
