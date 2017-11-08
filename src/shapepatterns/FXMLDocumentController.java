@@ -10,13 +10,15 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.canvas.Canvas;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import shapepatterns.DrawShape;
-import shapepatterns.ShapeList;
+
+
 
 /**
  *
@@ -36,14 +38,17 @@ public class FXMLDocumentController implements Initializable {
     private Button addButton;
     @FXML
     private TextField shapeSize;
-    @FXML
-    private Button button;
     
     
     private ShapeList shapeStore = new ShapeList();
     private DrawShape shape = new DrawShape();
-  
     @FXML
+    private Canvas drawShapes;
+    @FXML
+    private Button drawButton;
+    @FXML
+    private Canvas canvas;
+  
     private void selectChoice(){
     shapeChoice.getItems().addAll(shapeStore.getShapes());
         shapeChoice.getSelectionModel().selectFirst();
@@ -63,7 +68,6 @@ public class FXMLDocumentController implements Initializable {
         shapeList.getItems().addAll(shapeStore.getShapesInLine());
         
     }
-    @FXML
     private void clearCanvas(ActionEvent event)
     {
         shape.clearCanvas();
