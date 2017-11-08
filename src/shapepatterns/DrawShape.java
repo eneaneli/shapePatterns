@@ -19,11 +19,13 @@ public class DrawShape {
         gc.strokeOval(x, y, Size, Size);
     }
     
-    /**
-     * Explain 1706
-     * @param x
-     * @param y
-     * @param Size 
+  
+  /**
+   * 
+   * @param x
+   * @param y
+   * @param Size 
+   */
     public void drawRectangle(double x, double y, int Size)
     {
         gc.strokeRect(x, y, Size, Size);
