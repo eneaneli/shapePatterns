@@ -23,11 +23,8 @@ public class Shape {
      */
     public Shape(String Name, int Size){
         this.Name = Name;
-        this.Size = Size;
-        
+        this.Size = Size;      
     }
-
-  
 
     /**
      * 1706
@@ -44,7 +41,5 @@ public class Shape {
     public String getName() {
         return Name;
     }
-    
-    
-    
+      
 }

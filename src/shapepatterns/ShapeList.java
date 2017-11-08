@@ -60,7 +60,7 @@ public class ShapeList {
             double x = pattern.getNextX();
             double y = pattern.getNextX();
             
-            if(shape.getName() == "Traingle"){
+            if(shape.getName() == "Triangle"){
                 drawShape.drawTriangle(x, y, shape.getSize());
             }
             if(shape.getName() == "Rectangle"){

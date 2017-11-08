@@ -6,6 +6,8 @@
 package shapepatterns;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -122,7 +124,7 @@ public class FXMLDocumentController implements Initializable {
    private void clearTheList ()
   {
        shapeList.getItems().clear();
-
+ 
   }     
 
    /**
