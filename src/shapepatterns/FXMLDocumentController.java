@@ -7,60 +7,67 @@ package shapepatterns;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
+import shapepatterns.DrawShape;
+import shapepatterns.ShapeList;
 
 /**
  *
- * @author Anni
+ * @author Michael
  */
 public class FXMLDocumentController implements Initializable {
     
-    @FXML
+     @FXML
     private Label label;
     @FXML
-    private AnchorPane AnchorPane;
+    private ListView<String> shapeList;
     @FXML
-    private Button drawButton;
+    private ComboBox<String> shapeChoice;
     @FXML
-    private TextArea canvas;
-    @FXML
-    private ListView<?> shapeList;
-    @FXML
-    private ChoiceBox shapeChoice;
-    @FXML
-    private ChoiceBox canvasList;
+    private ComboBox<String> canvasList;
     @FXML
     private Button addButton;
     @FXML
-    private TextField sizeField;
+    private TextField shapeSize;
     @FXML
-    private Button clearButtonShape;
+    private Button button;
+    
+    
+    private ShapeList shapeStore = new ShapeList();
+    private DrawShape shape = new DrawShape();
+  
     @FXML
-    private Button clearButtonCanvas;
+    private void selectChoice(){
+    shapeChoice.getItems().addAll(shapeStore.getShapes());
+        shapeChoice.getSelectionModel().selectFirst();
+        
+        canvasList.getItems().addAll(shapeStore.getCanvaslist());
+        canvasList.getSelectionModel().selectFirst();
+}
+
     
     
-    ObservableList<String> shapes = FXCollections.observableArrayList("Triangle","Circle");
-    ObservableList<String> canvaslist = FXCollections.observableArrayList("Grid","Cross","Random");
-   
-    private void choiceBoxMenu(){
-    shapeChoice.setValue("Triangle");
-    shapeChoice.setItems(shapes);
     
-    canvasList.setValue("Grid");
-    canvasList.setItems(canvaslist);
+    @FXML
+    private void addShapeButton(ActionEvent event) {
+        
+        shapeStore.addShapesInLine(shapeChoice.getValue(), Integer.parseInt(shapeSize.getText()));
+        shapeList.getItems().clear();
+        shapeList.getItems().addAll(shapeStore.getShapesInLine());
+        
     }
-    
+    @FXML
+    private void clearCanvas(ActionEvent event)
+    {
+        shape.clearCanvas();
+    }
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -68,26 +75,13 @@ public class FXMLDocumentController implements Initializable {
         label.setText("Hello World!");
     }
     
-
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        choiceBoxMenu();
+        
+    selectChoice();
+    
+         
+         
     }    
     
-    
-    /**
-     * draws shapes, hopefully.. in the future
-     */
-//     public void draw(int x, int y, GraphicsContext context) {
-//      context.setFill(Color.BLACK);
-//      context.setStroke(Color.BLACK);
-//      context.setLineWidth(1);
-//
-//      double[] xPoints = {x,x+50,x-50};
-//      double[] yPoints = {y,y+50,y+50};
-//
-//      context.beginPath();
-//      context.strokePolygon(xPoints, yPoints, 3);
-// }
 }

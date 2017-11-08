@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shapepatterns.FXMLDocumentController">
     <children>
-        <Button fx:id="button" layoutX="531.0" layoutY="399.0" onAction="#handleButtonAction" text="Draw Shapes" />
         <Label fx:id="label" layoutX="37.0" layoutY="432.0" minHeight="16" minWidth="69" />
-      <TextArea layoutX="344.0" layoutY="43.0" prefHeight="336.0" prefWidth="284.0" />
-      <ListView layoutX="184.0" layoutY="43.0" prefHeight="336.0" prefWidth="128.0" />
-      <ChoiceBox fx:id="shapeChoice" layoutX="14.0" layoutY="43.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="canvasList" layoutX="330.0" layoutY="399.0" prefWidth="150.0" />
-      <Button fx:id="addButton" layoutX="37.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Add -&gt;" />
-      <Label layoutX="23.0" layoutY="351.0" text="Size:" />
-      <TextField layoutX="65.0" layoutY="347.0" prefHeight="25.0" prefWidth="103.0" />
+      <ComboBox fx:id="shapeChoice" layoutX="14.0" layoutY="26.0" prefHeight="31.0" prefWidth="118.0" />
+      <Label layoutX="62.0" layoutY="287.0" text="Size" />
+      <ListView fx:id="shapeList" layoutX="173.0" layoutY="14.0" prefHeight="385.0" prefWidth="143.0" />
+      <Button fx:id="addButton" layoutX="39.0" layoutY="359.0" mnemonicParsing="false" onAction="#addShapeButton" prefHeight="31.0" prefWidth="69.0" text="Add" />
+      <Button fx:id="button" layoutX="532.0" layoutY="412.0" mnemonicParsing="false" onAction="#addShapeButton" text="Draw Shapes" />
+      <ComboBox fx:id="canvasList" layoutX="330.0" layoutY="412.0" prefWidth="150.0" />
+      <TextField fx:id="shapeSize" layoutX="16.0" layoutY="321.0" prefHeight="31.0" prefWidth="118.0" />
+      <Canvas fx:id="drawShapes" height="385.0" layoutX="323.0" layoutY="14.0" width="321.0" />
     </children>
 </AnchorPane>
