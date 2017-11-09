@@ -5,6 +5,7 @@
  */
 package shapepatterns.BE;
 
+import java.awt.Point;
 import java.util.Random;
 
 /**
@@ -14,20 +15,16 @@ import java.util.Random;
 public class GridPattern implements Patterns{
 
     
-    Random rand = new Random();
-
-    
-    
     @Override
     public double getNextX()
     {
-        return rand.nextDouble() * 321;
+        return Math.floor(Math.random()*10)*30;
     }
 
     @Override
     public double getNextY()
     {
-        return rand.nextDouble() * 385;
+        return Math.floor(Math.random()*10)*30;
     }   
  
 }
