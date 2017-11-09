@@ -5,13 +5,11 @@
  */
 package shapepatterns.BE;
 
-import javafx.scene.canvas.GraphicsContext;
-
 /**
  *
  * @author Anni
  */
-public class Shape {
+    public class Shape {
     
     private int Size;
     private String Name;
@@ -24,18 +22,10 @@ public class Shape {
         this.Size = Size;      
     }
 
-    /**
-     * getter
-     * @return 
-     */
     public int getSize() {
         return Size;
     }
 
-    /**
-     * getter
-     * @return 
-     */
     public String getName() {
         return Name;
     }
