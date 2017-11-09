@@ -53,6 +53,12 @@ public class ShapeList {
             return shapesAsString;
             }
     
+    public void clearShapes()
+    {
+        shapesInLine.clear();
+    }
+    
+    
     /**
      * write stuff 1706
      */
@@ -61,7 +67,7 @@ public class ShapeList {
         for (Shape shape: shapesInLine)
         {
             double x = pattern.getNextX();
-            double y = pattern.getNextX();
+            double y = pattern.getNextY();
             
             if(shape.getName() == "Triangle"){
                 drawShape.drawTriangle(x, y, shape.getSize());

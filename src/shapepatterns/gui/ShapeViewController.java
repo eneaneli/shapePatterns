@@ -26,7 +26,7 @@ import javafx.scene.canvas.GraphicsContext;
  *
  * @author Anni
  */
-public class FXMLDocumentController implements Initializable {
+public class ShapeViewController implements Initializable {
     GraphicsContext gc;
     
      @FXML
@@ -118,6 +118,8 @@ public class FXMLDocumentController implements Initializable {
    private void clearTheList ()
   {
        shapeList.getItems().clear();
+       shapeStore.clearShapes();
+       
  
   }     
 
@@ -128,6 +130,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void clearListButton(ActionEvent event) {
         clearTheList();
+        
     }
 
     /**

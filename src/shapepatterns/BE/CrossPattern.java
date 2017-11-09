@@ -21,8 +21,8 @@ public class CrossPattern implements Patterns{
     @Override
     public double getNextX()
     {
-       return rand.nextDouble() * 321;//321
-       // return 100;
+       //return rand.nextDouble() * 321;//321
+        return 100;
     }
 
     @Override
