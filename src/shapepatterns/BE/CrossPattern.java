@@ -18,7 +18,11 @@ public class CrossPattern implements Patterns{
     boolean xIsNotRandom=true;
     boolean yIsNotRandom=true;
     
-    
+    /**
+     * Here is a method for getting the next x, in it is a boolean so it switches
+     * between a set number and a random number in order to get the cross pattern.
+     * @return 
+     */
     @Override
     public double getNextX()
     {     
@@ -34,7 +38,11 @@ public class CrossPattern implements Patterns{
              
        }                       
     }
-
+   /**
+     * Here is a method for getting the next y, in it is a boolean so it switches
+     * between a set number and a random number in order to get the cross pattern.
+     * @return 
+     */
     @Override
     public double getNextY()
     {   

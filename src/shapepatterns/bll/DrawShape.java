@@ -36,15 +36,5 @@ public class DrawShape {
     {
         this.gc = gc;
     }
-    
-    /**
-     * this method is also in the document controller, but if I 
-     * remove it/make it private here I can't use clearCanvas
-     * -AEE, edit this 1706
-     */
-    public void clearCanvas()
-    {
-        gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
-    }
-    
+
 }

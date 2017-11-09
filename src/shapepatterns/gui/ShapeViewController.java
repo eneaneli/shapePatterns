@@ -6,8 +6,11 @@
 package shapepatterns.gui;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+import javafx.scene.canvas.GraphicsContext;
+import shapepatterns.BE.RandomPattern;
+import shapepatterns.BE.Shape;
+import shapepatterns.bll.DrawShape;
+
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,15 +24,14 @@ import javafx.scene.control.TextField;
 import shapepatterns.bll.DrawShape;
 import shapepatterns.BE.ShapeList;
 import javafx.scene.canvas.GraphicsContext;
-
+        
 /**
  *
  * @author Anni
  */
 public class ShapeViewController implements Initializable {
-    GraphicsContext gc;
     
-     @FXML
+    @FXML
     private Label label;
     @FXML
     private ListView<String> shapeList;
@@ -41,20 +43,20 @@ public class ShapeViewController implements Initializable {
     private Button addButton;
     @FXML
     private TextField shapeSize;  
-
-    private ShapeList shapeStore = new ShapeList();
-    
-    private DrawShape shape = new DrawShape();
     @FXML
     private Canvas drawShapes;
     @FXML
     private Button drawButton;
- 
     @FXML
     private Button clearList;
     @FXML
     private Button clearCanvasButton;
-  
+    
+    private ShapeList shapeStore = new ShapeList();
+    
+    private DrawShape shape = new DrawShape();
+    
+    private DrawShape drawShape = new DrawShape();
     
     /**
      * 1706
@@ -64,13 +66,12 @@ public class ShapeViewController implements Initializable {
         
         shapeChoice.getItems().addAll(shapeStore.getShapes());
         shapeChoice.getSelectionModel().selectFirst();
-        
         canvasList.getItems().addAll(shapeStore.getCanvaslist());
         canvasList.getSelectionModel().selectFirst();
 }
     
     /**
-     * 1706 ellie
+     * adds shapes to the list
      * @param event 
      */
     @FXML
@@ -78,13 +79,12 @@ public class ShapeViewController implements Initializable {
         
         shapeStore.addShapesInLine(shapeChoice.getValue(), Integer.parseInt(shapeSize.getText()));
         shapeList.getItems().clear();
-        shapeList.getItems().addAll(shapeStore.getShapesInLine());
-        
+        shapeList.getItems().addAll(shapeStore.getShapesInLine());       
     }
 
 
     /**
-     * fxml? 1706
+     * this draws a shape.
      */
     @FXML
     private void drawShape()
@@ -101,55 +101,49 @@ public class ShapeViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         shapeStore = new ShapeList();;
-        shape = new DrawShape(); 
-        
-        shapeStore.setContext(drawShapes.getGraphicsContext2D());
-        
-        selectChoice();
-    
+        shape = new DrawShape();     
+        shapeStore.setContext(drawShapes.getGraphicsContext2D()); 
+        selectChoice();  
     }    
     
-      /**
-   * This is linked to the clear button right beneath the ListView, and it will clear
-   * the ListView so we can add new shapes. 
-   * not good enough yet, need to find a way to actually delete items from list 1706
+    /**
+     * 1706
+     * @param event 
+     */
+    private void clearCanvas()
+    {
+      GraphicsContext gc = drawShapes.getGraphicsContext2D();
+        gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+    }
+   
+     /**
+    * This is for the clear button underneath the canvas "drawShapes", 
+    * it clears the canvas.
+    * @param event 
+    */
+    @FXML
+    private void clearCanvasButton(ActionEvent event) {
+        clearCanvas();     
+    }  
+
+   /**
+   * This is linked to the clear button right beneath the ListView, 
+   * and it clears the ListView so we can add new shapes. 
    * @param event 
    */
    private void clearTheList ()
   {
        shapeList.getItems().clear();
        shapeStore.clearShapes();
-       
- 
   }     
 
    /**
-    * comment 1706
-    * @param event 
+    * @param event, this is for the FXML document so that when the clear button is clicked
+    * it actually clears something.
     */
     @FXML
     private void clearListButton(ActionEvent event) {
-        clearTheList();
-        
-    }
-
-    /**
-     * 1706
-     * @param event 
-     */
-     @FXML
-    private void clearCanvas()
-    {
-        shape.clearCanvas();
-       // gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
-    }
-   
-     /**
-    * cant make work yet 1706
-    * @param event 
-    */
-    @FXML
-    private void clearCanvasButton(ActionEvent event) {
-        clearCanvas();
-    }  
+        clearTheList();     
+    }     
+    
 }

@@ -5,16 +5,16 @@
  */
 package shapepatterns.BE;
 
-
+import javafx.scene.canvas.GraphicsContext;
 import shapepatterns.BE.RandomPattern;
 import shapepatterns.BE.Shape;
 import shapepatterns.bll.DrawShape;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javafx.event.ActionEvent;
 
-import javafx.scene.canvas.GraphicsContext;
+
+
 
 
 
@@ -31,7 +31,7 @@ public class ShapeList {
     private ArrayList<Shape> shapesInLine = new ArrayList();
     
     /**
-     * Write stuff 1706
+     * For the choiceboxes for choosing shape and pattern.
      */
     public ShapeList()
     {
@@ -40,8 +40,7 @@ public class ShapeList {
     }
     
     /**
-     * Write stuff 1706
-     * @return 
+     * getShapesInLine is a method for getting shapesInLine as a String.
      */
     public ArrayList<String> getShapesInLine()
     {
@@ -60,7 +59,7 @@ public class ShapeList {
     
     
     /**
-     * write stuff 1706
+     * here we draw the shapes as well
      */
     public void drawShape()
     {
@@ -83,7 +82,7 @@ public class ShapeList {
     }
 
     /**
-     * 
+     *  adds shapes to the listView
      * @param shape
      * @param size 
      */
@@ -92,42 +91,24 @@ public class ShapeList {
         this.shapesInLine.add(new Shape(shape, size));
     }
    
-    /**
-     * what does it do 1706
-     * @param context 
-     */
     public void setContext(GraphicsContext context)
     {
         drawShape.setContext(context);
     }
 
-    /**
-     * what goin on hier 1706
-     * @return 
-     */
     public ArrayList<String> getShapes() {
         return shapes;
     }
 
-    /**
-     * 1706 a getter for the canvaslist
-     * @return 
-     */
+
     public ArrayList<String> getCanvaslist() {
         return canvaslist;
     }
 
-    /**
-     * This is linked to the clear button beneath the canvas, and it clears the canvas.
-     * is also in the controller
-     */
-    public void clearCanvas()
-    {
-        drawShape.clearCanvas();
-    }
+
     
     /**
-     * here's a setter
+     * the pattern is set.
      * @param pattern 
      */
     public void setPattern(String pattern)
