@@ -15,21 +15,42 @@ public class CrossPattern implements Patterns{
 
     
     Random rand = new Random();
-
+    boolean xIsNotRandom=true;
+    boolean yIsNotRandom=true;
     
     
     @Override
     public double getNextX()
-    {
-       //return rand.nextDouble() * 321;//321
-        return 100;
+    {     
+       if(xIsNotRandom)
+       {
+        xIsNotRandom=false;
+       return 160;
+       }
+       else
+       {
+       xIsNotRandom=true;
+       return rand.nextDouble() * 321;
+             
+       }                       
     }
 
     @Override
     public double getNextY()
-    {
-        //return 192; 
-        return rand.nextDouble() * 385; 
+    {   
+        if(yIsNotRandom)
+        {
+        yIsNotRandom=false;
+        
+        return rand.nextDouble() * 385;
+        }
+        else
+        {
+        yIsNotRandom=true;
+        return 192;
+        }
     }  
-  
+ 
+   
+          
 }
